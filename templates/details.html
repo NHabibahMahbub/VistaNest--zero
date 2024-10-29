@@ -54,5 +54,17 @@
         </form>
     </div>
 
+<!-- Add this in your property details page -->
+{% if user.is_authenticated %}
+    {% if property in user.favorite_set.all %}
+        <a href="{% url 'remove_from_favorites' property.id %}">Remove from Favorites</a>
+    {% else %}
+        <a href="{% url 'add_to_favorites' property.id %}">Add to Favorites</a>
+    {% endif %}
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to add to favorites.</p>
+{% endif %}
+
+
 </body>
 </html>

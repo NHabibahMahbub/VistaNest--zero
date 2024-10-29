@@ -3,5 +3,6 @@ from .models import Platform, Bid
 
 # Register your models here.
 admin.site.register(Platform)
-admin.site.register(Bid)
+created bid.html for biding fecilBidFormity
+
 
